@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopichandh Gurram - Data Scientist</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            font-style: italic;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #003366;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: #003366;
+        }
+
+        .card a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #003366;
+        }
+
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill {
+            background: #f4f4f9;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #003366;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            background: #0066cc;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #003366;
+            transform: translateY(-3px);
+        }
+
+        /* Resume Section */
+        .resume-section {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h2 {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .resume-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-button {
+            background: #ffdd57;
+            color: #003366;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .resume-button:hover {
+            background: #ffcc00;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #003366; /* Dark blue background */
+            color: #fff; /* White text */
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem; /* Larger heading */
+            margin-bottom: 1.5rem;
+        }
+
+        #contact p {
+            font-size: 1.2rem; /* Larger paragraph text */
+            margin-bottom: 2rem;
+        }
+
+        #contact .cta-button {
+            background: #ffdd57; /* Yellow button */
+            color: #003366; /* Dark blue text */
+            margin: 0.5rem;
+            font-size: 1.1rem; /* Slightly larger button text */
+        }
+
+        #contact .cta-button:hover {
+            background: #ffcc00; /* Brighter yellow on hover */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Dynamic Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(63, 94, 251, 0.1), rgba(252, 70, 107, 0.1));
+            overflow: hidden;
+        }
+
+        .background span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: move 10s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px) translateX(800px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="background">
+        <span style="top: 20%; left: 30%; width: 50px; height: 50px; animation-duration: 15s;"></span>
+        <span style="top: 60%; left: 80%; width: 70px; height: 70px; animation-duration: 12s;"></span>
+        <span style="top: 40%; left: 50%; width: 30px; height: 30px; animation-duration: 10s;"></span>
+        <span style="top: 90%; left: 20%; width: 40px; height: 40px; animation-duration: 18s;"></span>
+    </div>
+
+    <header>
+        <h1>Gopichandh Gurram</h1>
+        <p>Data Scientist | Machine Learning Engineer | Data Analyst | Problem Solver
+        </p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#resume">Resume</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <!-- About Me Section -->
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>
+                I am a <strong>Data Scientist</strong> with a strong background in <strong>machine learning</strong>, <strong>data analytics</strong>, and <strong>statistical modeling</strong>. I specialize in building predictive models, automating workflows, and creating data-driven solutions to solve real-world problems. With expertise in Python, SQL, and data visualization tools like Tableau, I aim to leverage my skills to drive innovation and deliver actionable insights.
+            </p>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume-section">
+            <h2>Resume</h2>
+            <p>
+                Download my resume to explore my professional experience, skills, and achievements in detail. My resume highlights my expertise in <strong>data science</strong>, <strong>machine learning</strong>, and <strong>data analytics</strong>, along with my academic background and certifications.
+            </p>
+            <!-- Updated resume link -->
+            <a href="https://github.com/Gopi138942/Resume/raw/main/Gopi_resume_new.pdf" download="Gopi_resume_new.pdf" class="resume-button">Download Resume</a>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">
+                <h2>Automated Machine Learning (AutoML)</h2>
+                <p>Developed an end-to-end AutoML system to automate data preprocessing, model training, and hyperparameter tuning. This project reduces manual effort and improves efficiency in model development.</p>
+                <a href="https://github.com/Gopi138942/Automated_ML" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h2>Online Attendance Tracker</h2>
+                <p>Built a web-based attendance tracking system using Python and Flask. The system allows users to mark attendance, generate reports, and analyze attendance trends.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h2>Voice Translator</h2>
+                <p>Created a voice translation tool using Python and Google Translate API. The tool translates spoken language in real-time and supports multiple languages.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h2>Retail Sales Analysis - SQL Project</h2>
+                <p>Analyzed retail sales data using SQL to identify trends, top-performing products, and customer behavior. The project includes data cleaning, querying, and visualization.</p>
+                <a href="https://github.com/Gopi138942/sql_project" target="_blank">View Project</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">Python</div>
+                <div class="skill">Machine Learning</div>
+                <div class="skill">Deep Learning</div>
+                <div class="skill">Data Analysis</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Tableau</div>
+                <div class="skill">TensorFlow</div>
+                <div class="skill">Big Data</div>
+                <div class="skill">LeetCode</div>
+            </div>
+            <div class="card">
+                <h2>LeetCode Profile</h2>
+                <p>Check out my LeetCode profile to see my problem-solving skills and coding challenges.</p>
+                <a href="https://leetcode.com/u/gopi135942/" target="_blank" class="cta-button">View LeetCode Profile</a>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="card">
+                <h2>Machine Learning - Coursera</h2>
+                <p>Completed the Machine Learning course by Andrew Ng.</p>
+                <a href="https://www.coursera.org/user/da6e9f1c333e31758c9add082ed6bde7" target="_blank">View Certificate</a>
+            </div>
+            <div class="card">
+                <h2>Data Science - Forage</h2>
+                <p>Completed the Data Science program on Forage.</p>
+                <a href="https://www.theforage.com/profile/5LfZhxFN3HzwJ6YG7" target="_blank">View Certificate</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Let's connect! Feel free to reach out for collaborations or job opportunities.</p>
+        <a href="mailto:gopichandh.reddy@gmail.com" class="cta-button">Email Me</a>
+        <a href="https://www.linkedin.com/in/gopichandh-gurram/" target="_blank" class="cta-button">LinkedIn</a>
+        <a href="https://www.kaggle.com/gurramgopichandh" target="_blank" class="cta-button">Kaggle Profile</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Gopichandh Gurram. All Rights Reserved.</p>
+        <p><a href="https://github.com/Gopi138942" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/gopichandh-gurram/" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
